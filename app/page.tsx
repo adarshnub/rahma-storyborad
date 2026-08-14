@@ -31,7 +31,7 @@ const clips: Clip[] = [
     refs: [],
     prompt: "Begin on full black for exactly three seconds. Reveal a historically respectful, monochrome-sepia macro of mature hands in a formal dark sleeve signing an official founding document with a fountain pen. Soft archive grain, slight film weave, modest slow motion. No wide ceremony, flags, crowds, logos or readable document text. End on the pen lifting after the signature.",
     first: "Pure black.", last: "Pen lifted above the completed signature.", bridge: "Hard cut on the pen lift to the archival faces in Clip 02.",
-    video: { src: "/generated-video/clip-01/rahma-clip-01-seedance2-10s.mp4", poster: "/generated-video/clip-01/clip-01-archive-endframe.png", label: "Generated with Seedance 2.0 · 10 sec · 720p" }
+    video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
   },
   {
     id: "02", title: "A promise, kept", range: "00:10 — 00:20", section: "Promise", source: "Use full 10 seconds.",
@@ -40,7 +40,8 @@ const clips: Clip[] = [
     sound: "The held note opens into restrained warm strings only when the present-day images arrive.",
     refs: ["REF-02"],
     prompt: "Open in monochrome-sepia on intimate founding-era faces, never a ceremonial wide. Make a gentle push toward a respectful archival portrait of Sheikh Zayed. Then make three clean contemporary human cuts: children passing through a modest UAE school gate at 7am; a quiet cream-and-light-wood hospital corridor; lined older hands around a clear glass cup of tea. Warm 35mm realism. No skyline, flags, legible signs, brands or theatrical emotion.",
-    first: "Close archival face frame.", last: "Lined hands around tea in warm morning light.", bridge: "Hard cut to matte-black type in Clip 03; retain the tea warmth as the type accent."
+    first: "Close archival face frame.", last: "Lined hands around tea in warm morning light.", bridge: "Hard cut to matte-black type in Clip 03; retain the tea warmth as the type accent.",
+    video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
   },
   {
     id: "03", title: "A law for its children", range: "00:20 — 00:30", section: "Promise", source: "Use full 10 seconds.",
@@ -49,7 +50,8 @@ const clips: Clip[] = [
     sound: "Warm strings continue without a whoosh.",
     refs: [],
     prompt: "Create a calm graphic clip on matte black. Hold black for two seconds, then fade in approved Arabic lettering above a smaller English line, centered in warm off-white. Hold still; gently fade out during the last second. Composite exact supplied vectors in post: Arabic قانون حقوق الطفل, English A law for its children. Do not ask a generation model to produce text.",
-    first: "Matte black.", last: "Matte black after the title clears.", bridge: "Clip 04 starts from identical black; type scale, leading and color stay locked."
+    first: "Matte black.", last: "Matte black after the title clears.", bridge: "Clip 04 starts from identical black; type scale, leading and color stay locked.",
+    video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
   },
   {
     id: "04", title: "How a nation names care", range: "00:30 — 00:40", section: "Promise", source: "Use full 10 seconds.",

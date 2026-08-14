@@ -22,6 +22,8 @@ __pycache__/
 
 # Generated media and document-render QA
 generated-video/
+!public/generated-video/
+!public/generated-video/**
 rendered-storyboard/
 
 # Logs, coverage and TypeScript build state
