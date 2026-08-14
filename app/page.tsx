@@ -16,11 +16,225 @@ type Clip = {
   first: string;
   last: string;
   bridge: string;
+  frames?: StoryFrame[];
   video?: { src: string; poster: string; label: string };
+};
+
+type StoryFrame = {
+  second: string;
+  image: string;
+  title: string;
+  visual: string;
+  voiceover: string;
+  prompt: string;
 };
 
 const basePrompt =
   "16:9, 10-second cinematic video, 24 fps, 180-degree shutter, subtle 35mm grain, muted indigo shadows, warm amber practicals, cream limestone and restrained teal. The camera stays intimate and human, never surveillance-like. Every character is Arab, from a contemporary UAE/GCC context. Calm, capable performances; no sirens, flashing lights, crowds, panic, spectacle, unapproved visible brands, legible incidental text, watermarks or sci-fi UI. The graphite-black Rahma phone has one large amber-gold hold button with the bold uppercase word RAHMA in deep indigo; the black round wearable shows bold uppercase RAHMA in warm off-white inside its thin amber ring.";
+
+const clip01Frames: StoryFrame[] = [
+  {
+    second: "00:00",
+    image: "/storyboard-frames/clip-01/00.jpg",
+    title: "Absolute black",
+    visual: "Full black frame. No image, no text, no movement.",
+    voiceover: "Silence. No VO yet.",
+    prompt: "Pure matte black 16:9 frame. No texture, no text, no logo, no light leak."
+  },
+  {
+    second: "00:01",
+    image: "/storyboard-frames/clip-01/01.jpg",
+    title: "Hold silence",
+    visual: "The black hold continues so the film starts with restraint.",
+    voiceover: "Silence. Room tone remains absent.",
+    prompt: "Pure matte black 16:9 frame, identical to the previous second."
+  },
+  {
+    second: "00:02",
+    image: "/storyboard-frames/clip-01/02.jpg",
+    title: "Final black beat",
+    visual: "Last second of black before the founding image appears.",
+    voiceover: "Silence, then prepare for the first spoken line.",
+    prompt: "Pure matte black 16:9 frame, held exactly through the third second."
+  },
+  {
+    second: "00:03",
+    image: "/storyboard-frames/clip-01/03.jpg",
+    title: "Pen touches paper",
+    visual: "Archival macro of mature Arab male hands in a dark formal sleeve. Fountain pen touches an official document without readable text.",
+    voiceover: "This country did not begin...",
+    prompt: "Historically respectful monochrome-sepia archival macro, mature Arab male hands, dark formal sleeve, fountain pen touching an official founding document, no legible text, no flags, no crowds."
+  },
+  {
+    second: "00:04",
+    image: "/storyboard-frames/clip-01/04.jpg",
+    title: "Signature begins",
+    visual: "Same hand and pen begin the first curve of the signature. The camera stays tight and tactile.",
+    voiceover: "...with a border.",
+    prompt: "Continue the same archival macro frame. Fountain pen begins the signature curve, soft film grain, intimate 50mm close shot, no ceremony or logos."
+  },
+  {
+    second: "00:05",
+    image: "/storyboard-frames/clip-01/05.jpg",
+    title: "Promise in motion",
+    visual: "The signature develops. Paper, pen nib, sleeve texture and hand wrinkles carry the meaning.",
+    voiceover: "Let the line breathe after the VO.",
+    prompt: "Monochrome-sepia close shot of the same mature hands signing, fountain pen mid-stroke, official paper detail visible but unreadable, restrained archive texture."
+  },
+  {
+    second: "00:06",
+    image: "/storyboard-frames/clip-01/06.jpg",
+    title: "Ink line completes",
+    visual: "The signature becomes legible as a gesture, not as readable text. No other symbols enter.",
+    voiceover: "No new VO. Sustained low note begins.",
+    prompt: "Same archival signing macro, the ink line nearly complete, pen still moving, hand steady, no flags, no crowd, no readable document body."
+  },
+  {
+    second: "00:07",
+    image: "/storyboard-frames/clip-01/07.jpg",
+    title: "Pen slows",
+    visual: "Pen reaches the final flourish. The hand and document remain the only story objects.",
+    voiceover: "Music holds under the completed thought.",
+    prompt: "Close archival frame of the fountain pen slowing at the end of the signature, mature hands, dark sleeve, soft sepia, gentle film weave."
+  },
+  {
+    second: "00:08",
+    image: "/storyboard-frames/clip-01/08.jpg",
+    title: "Lift begins",
+    visual: "The nib starts to lift from the completed signature. This becomes the bridge action.",
+    voiceover: "No new VO.",
+    prompt: "Same signature macro. Fountain pen nib just lifting from paper after the completed signature, restrained archive grain, no readable official text."
+  },
+  {
+    second: "00:09",
+    image: "/storyboard-frames/clip-01/09.jpg",
+    title: "Bridge frame",
+    visual: "Pen is lifted above the completed signature, ready for the hard cut into Clip 02.",
+    voiceover: "Hold the low note into the cut.",
+    prompt: "Final frame of the archival signing: pen lifted above completed signature, hands still, monochrome-sepia, intimate and respectful."
+  }
+];
+
+type FrameSpec = [second: string, title: string, visual: string, voiceover: string, prompt: string];
+
+function buildFrames(clipId: string, ext: "jpg" | "png", specs: FrameSpec[]): StoryFrame[] {
+  return specs.map(([second, title, visual, voiceover, prompt], index) => ({
+    second,
+    image: `/storyboard-frames/clip-${clipId}/${String(index).padStart(2, "0")}.${ext}`,
+    title,
+    visual,
+    voiceover,
+    prompt
+  }));
+}
+
+const allClipFrames: Record<string, StoryFrame[]> = {
+  "01": clip01Frames,
+  "02": buildFrames("02", "jpg", [
+    ["00:10", "Founding faces", "Monochrome-sepia close frame of founding-era Arab faces, no ceremony wide.", "It began with a promise.", "Archival close faces, respectful sepia grain, intimate not ceremonial, no flags or readable text."],
+    ["00:11", "Push inward", "The archival portrait feeling tightens; the frame stays human and remembered.", "That no one here...", "Continue archival close composition with gentle push-in energy, faces dignified and calm."],
+    ["00:12", "Promise held", "Archive faces remain the emotional bridge from the signature.", "...would be left...", "Same monochrome-sepia archive texture, soft contrast, no spectacle or crowd scale."],
+    ["00:13", "Zayed emphasis", "The push reaches a respectful founder portrait feeling without turning into pageantry.", "...to manage alone.", "Respectful archival portrait emphasis, close and still, no flags, logos, or readable captions."],
+    ["00:14", "Archive breath", "Final archival beat before the film enters present-day care.", "Everything built since...", "Hold the archival close frame for one more restrained second, soft gate weave."],
+    ["00:15", "Present begins", "The archive gives way toward modern UAE life, still quiet and human.", "...has been that promise...", "Warm transition from sepia archive into contemporary UAE care details, no skyline or signage."],
+    ["00:16", "Human continuity", "Founding promise is visually connected to ordinary civic care.", "...keeping its word.", "Close contemporary detail with the same calm visual grammar, warm and modest."],
+    ["00:17", "Before school", "A quiet present-day detail prepares the school-gate cut.", "VO line resolves.", "Modest UAE morning life, children implied, no branded uniforms or readable signs."],
+    ["00:18", "School gate", "Children pass through a modest UAE school gate at 7am.", "Music opens into warm strings.", "Contemporary UAE school gate, intimate 35mm, Arab children, no readable signage."],
+    ["00:19", "Hospital corridor", "Quiet cream-and-light-wood hospital corridor, clean and calm.", "No new VO.", "Quiet hospital corridor, warm practicals, no patients in distress, no alarms."]
+  ]),
+  "03": buildFrames("03", "jpg", [
+    ["00:20", "Older hands", "Lined older Arab hands around a clear glass cup of tea in warm morning light.", "For its children...", "Close domestic care detail, glass tea cup, older hands, warm morning, no brands."],
+    ["00:21", "Black breath", "Matte black reset before the child-law card.", "...it wrote a law...", "Pure matte black, no texture, no logo, no light leak."],
+    ["00:22", "Law title appears", "Bilingual child-law title card appears on matte black.", "...and made it cover...", "Matte black card with exact composited Arabic and English law title, warm off-white type."],
+    ["00:23", "Title hold", "The type remains still and centered.", "...every child...", "Hold approved vector title, no animation, no flare, no generated text drift."],
+    ["00:24", "Title hold", "The legal promise is held without graphic decoration.", "...in this country.", "Same title card, warm off-white on matte black, calm and still."],
+    ["00:25", "Title hold", "No new imagery; the card carries the idea.", "Not only its own.", "Continue title card hold, no texture, no motion, no UI motifs."],
+    ["00:26", "Title hold", "The audience has time to read the law statement.", "VO resolves.", "Approved vector title only, exact centered layout."],
+    ["00:27", "Title hold", "Last full hold of the child-law card.", "Warm strings continue.", "Continue locked type system, no additional icons or logos."],
+    ["00:28", "Fade intent", "The title prepares to clear back to black.", "No whoosh.", "Title card in final still moment before fade out, centered and quiet."],
+    ["00:29", "Black bridge", "Matte black after the title clears.", "Music holds.", "Pure matte black, bridge into Clip 04."]
+  ]),
+  "04": buildFrames("04", "jpg", [
+    ["00:30", "People of Determination", "First bilingual naming-care card holds on matte black.", "For people with disabilities...", "Exact composited Arabic and English title card: People of Determination, warm off-white on black."],
+    ["00:31", "Card hold", "The first card remains still.", "...it changed the word.", "Hold the exact vector title, no generated text, no movement."],
+    ["00:32", "Card hold", "No imagery beyond the title system.", "People of Determination.", "Continue title hold, calm legal-civic tone."],
+    ["00:33", "Card hold", "Last clear second of the first title.", "Line resolves.", "Final hold of first card, no flare or texture."],
+    ["00:34", "Senior Citizens", "Second bilingual naming-care card replaces the first.", "For the elderly...", "Exact composited Arabic and English title card: Senior Citizens, warm off-white on black."],
+    ["00:35", "Card hold", "The second card remains still.", "...it changed the word again.", "Hold the exact vector title, no generated text, no movement."],
+    ["00:36", "Card hold", "The naming-care idea is allowed to land.", "Senior Citizens.", "Continue second card hold, no icons or logos."],
+    ["00:37", "Card hold", "Last clear second of the second title.", "A nation is measured...", "Final hold of second card, calm and centered."],
+    ["00:38", "Black breath", "Full black after the cards.", "...by what it calls...", "Pure matte black, no texture, no logo."],
+    ["00:39", "Black bridge", "Black continues into the Rahma word section.", "...the people it protects.", "Pure matte black, bridge into Clip 05."]
+  ]),
+  "05": buildFrames("05", "jpg", [
+    ["00:40", "Black", "Full black before the word appears.", "There is one more word.", "Pure matte black, no light leak, no logo."],
+    ["00:41", "Black", "The silence around the word is preserved.", "Rahma.", "Pure matte black, quiet breath before Arabic wordmark."],
+    ["00:42", "Arabic Rahma", "The Arabic Rahma wordmark appears alone, centered.", "It is not a word...", "Exact Arabic Rahma vector wordmark, warm off-white on matte black."],
+    ["00:43", "Word hold", "Arabic wordmark holds absolutely still.", "...this country borrowed.", "Hold Arabic wordmark only, no glow, no particles, no generated text."],
+    ["00:44", "Word hold", "The word remains the only object.", "It is the one...", "Continue centered Arabic wordmark, approved vector art."],
+    ["00:45", "Word hold", "Stillness gives the word weight.", "...it was built on.", "Continue exact wordmark, matte black, warm off-white."],
+    ["00:46", "Word hold", "Final Arabic-only beat before English appears.", "VO resolves.", "Hold Arabic Rahma wordmark, no motion."],
+    ["00:47", "Bilingual Rahma", "Small English Rahma appears beneath the Arabic word.", "Quiet musical space.", "Exact Arabic wordmark with small English Rahma below, centered and still."],
+    ["00:48", "Bilingual hold", "The bilingual mark remains still.", "No new VO.", "Hold bilingual wordmark, no reveal effects."],
+    ["00:49", "Bridge mark", "The wordmark prepares to become the app mark.", "Music thins.", "Final bilingual wordmark frame before app-mark morph."]
+  ]),
+  "06": buildFrames("06", "jpg", [
+    ["00:50", "Word to mark", "Bilingual Rahma wordmark carries into the morph.", "And now...", "Bilingual wordmark on black, composited cleanly, no generator text."],
+    ["00:51", "App mark", "The app-mark silhouette is centered on black.", "...it is something...", "Clean app-mark silhouette, warm off-white/amber restraint, no 3D logo reveal."],
+    ["00:52", "Mark hold", "The app mark holds before the bedroom cut.", "...you can hold...", "Hold clean app mark on matte black, no flares."],
+    ["00:53", "Bedroom cut", "Pre-dawn bedroom establishes Mariam's bedside table and warm lamp.", "...in your hand.", "Mariam bedroom, warm lamp, blue dawn, walnut bedside table, no extra people."],
+    ["00:54", "Bedroom move", "The phone is about to become the object of focus.", "VO resolves.", "Same bedroom palette, gentle close framing, calm domestic context."],
+    ["00:55", "Device bible", "Locked phone and wearable design frame confirms the UI grammar.", "Tactile wake chime.", "Graphite phone, deep-indigo UI, amber RAHMA button, wearable with RAHMA ring."],
+    ["00:56", "Phone wakes", "Mariam holds the graphite phone; the RAHMA button is centered.", "Music softens.", "Older Arab woman from behind, phone upright, bold RAHMA amber button, teal halo."],
+    ["00:57", "Phone hold", "Same phone orientation, screen readable and uncluttered.", "No new VO.", "Continue Mariam phone frame, one button only, no menus or notifications."],
+    ["00:58", "Phone hold", "The phone is now the bridge object into Clip 07.", "Room tone.", "Hold phone near camera, deep-indigo screen, amber button unpressed."],
+    ["00:59", "Button ready", "Mariam's thumbs rest near the button but do not press.", "Bridge chime fades.", "Final unpressed button frame, same hands and bedroom context."]
+  ]),
+  "07": buildFrames("07", "png", [
+    ["01:00", "Continuation", "Exact continuation: Mariam holds the awake phone in the pre-dawn bedroom.", "Rahma was built...", "Use locked Mariam phone anchor, button unpressed, bold RAHMA, no UI clutter."],
+    ["01:01", "One button", "The single amber button remains the only action target.", "...for the people...", "Same phone frame, no menus, thumb poised, calm hands."],
+    ["01:02", "Press begins", "Mariam's thumb presses the RAHMA button.", "...who find technology hardest.", "Thumb deliberately presses amber RAHMA button; maintain older Arab hands and bedroom."],
+    ["01:03", "Hold count one", "The hold is clear and still; no menu appears.", "No typing.", "Continue pressed button frame, tactile stillness, no extra UI."],
+    ["01:04", "Hold count two", "The second beat of the hold completes.", "No menus.", "Pressed button with restrained teal confirmation ring beginning."],
+    ["01:05", "Confirmation pulse", "A soft teal ring confirms the action.", "One button...", "Teal confirmation pulse around amber RAHMA button, calm not sci-fi."],
+    ["01:06", "Pulse settles", "Her hand relaxes but stays in frame.", "...held for two seconds.", "Pulse settles, phone still centered, no alerts."],
+    ["01:07", "Calm result", "The confirmed state stays quiet and readable.", "VO resolves.", "Continue settled confirmation, no new UI."],
+    ["01:08", "Bridge circle", "The circular pulse becomes the bridge shape.", "Soft tactile tone.", "Frame emphasizes circular teal/amber form for map-marker match cut."],
+    ["01:09", "Map bridge", "Final phone frame before the pulse becomes location.", "Room tone.", "Hold confirmed button, prepare match to abstract map marker."]
+  ]),
+  "08": buildFrames("08", "png", [
+    ["01:10", "Location appears", "The pulse becomes an amber location dot on Lina's abstract map.", "Rahma knows where...", "Lina in parked graphite car, abstract deep-indigo map, amber dot, no readable address."],
+    ["01:11", "Lina receives", "Lina remains seated calmly in the parked car.", "...that citizen is...", "Over-shoulder car frame, Arab caregiver, map secondary, no driving."],
+    ["01:12", "Map confidence", "The map stays abstract and non-surveillance-like.", "...even when...", "Phone map with floor/building shapes only, no personal data."],
+    ["01:13", "Quiet street", "Blue-hour UAE residential street gives context.", "...the signal doesn't.", "Parked car, warm apartments, calm street, no emergency vehicle movement."],
+    ["01:14", "First notice complete", "Lina's acknowledgement is composed.", "And it tells...", "Caregiver remains calm, phone/map glow restrained."],
+    ["01:15", "Sami notices", "Cut to Sami noticing his phone in a warm apartment.", "...the people...", "Sami in brown overshirt, phone on table, calm apartment, no panic."],
+    ["01:16", "Pause", "Sami processes before reacting.", "...who love them...", "Medium frame, Sami looking down toward graphite phone, composed."],
+    ["01:17", "Rise begins", "Sami starts to stand with quiet purpose.", "...first.", "Sami rising from sofa, phone glow secondary, no running."],
+    ["01:18", "Purpose", "He is upright enough for the next chain to begin.", "VO resolves.", "Sami nearly standing, warm practical light, calm attention."],
+    ["01:19", "Bridge to chain", "Sami is ready to move; frame expands to everyone else.", "Natural room tone.", "Final Sami frame, phone in hand or on table, composed and attentive."]
+  ]),
+  "09": buildFrames("09", "png", [
+    ["01:20", "Sami moves", "Sami is already moving with quiet purpose.", "Then it reaches...", "Continue Sami reaction frame, composed movement, no urgency spectacle."],
+    ["01:21", "Doctor notice", "Dr. Noor glances at her phone in the quiet hospital corridor.", "...everyone else...", "Arab doctor in teal scrubs and white coat, phone secondary, quiet corridor."],
+    ["01:22", "Doctor turns", "Dr. Noor turns into the corridor.", "...who needs to know.", "Doctor response frame, no patients in distress, no alarms."],
+    ["01:23", "Operator looks up", "The navy-uniform operator lifts her head at abstract screens.", "Doctors.", "Arab woman operator in navy hijab, dark screens abstract, no readable data."],
+    ["01:24", "Control ready", "The control room reads as professional attention, not surveillance.", "Police.", "Operator frame, restrained amber/teal dots, no red flashing."],
+    ["01:25", "Paramedic door", "A paramedic calmly closes a rear vehicle door.", "Ambulance.", "Arab paramedic, parked unbranded vehicle, no sirens, no flashing lights."],
+    ["01:26", "Quiet readiness", "The door gesture completes without spectacle.", "The people who care...", "Paramedic frame, vehicle stationary, no patient, no crowd."],
+    ["01:27", "Family relief", "A woman at home reads her phone and exhales into relief.", "...for them at home.", "Arab woman in warm apartment, phone secondary, relief not panic."],
+    ["01:28", "All at once", "Her relief holds as the chain feels complete.", "All at once.", "Warm domestic relief frame, no tears, no emergency imagery."],
+    ["01:29", "Before arrival", "The phone lowers slightly; calm information has arrived.", "It carries what a doctor would need to know before they arrive.", "Final relief frame, phone lowering, quiet safety."]
+  ]),
+  "10": buildFrames("10", "png", [
+    ["01:30", "Wearable macro", "Round black wearable rests on Mariam's older wrist over white bedding.", "It speaks Arabic.", "Wearable macro, bold RAHMA, deep-indigo face, amber ring, no dashboard."],
+    ["01:31", "Quiet device", "The wearable remains still; no alert state.", "English. And more.", "Same wearable, soft morning light, no notifications."],
+    ["01:32", "Background care", "The device reads as background safety.", "It remembers the medicine, when the day gets long.", "Hold wearable frame, quiet bedding texture, no medical drama."],
+    ["01:33", "Mariam reading", "Pull back idea: Mariam reads a folded newspaper at home.", "And when the network fails...", "Mariam in cream-and-walnut home, dove-grey headscarf, cream cardigan, no readable headlines."],
+    ["01:34", "Nothing happens", "She remains peaceful in ordinary morning light.", "...it keeps going anyway.", "Mariam reading calmly, tea/home details, no alerts."],
+    ["01:35", "Editorial out", "Final approved frame before the 01:36 cut to black.", "Quietly. In the background. Before anything goes wrong.", "Mariam reading in peaceful morning light, final frame, cut to black after this."]
+  ])
+};
 
 const clips: Clip[] = [
   {
@@ -31,6 +245,7 @@ const clips: Clip[] = [
     refs: [],
     prompt: "Begin on full black for exactly three seconds. Reveal a historically respectful, monochrome-sepia macro of mature hands in a formal dark sleeve signing an official founding document with a fountain pen. Soft archive grain, slight film weave, modest slow motion. No wide ceremony, flags, crowds, logos or readable document text. End on the pen lifting after the signature.",
     first: "Pure black.", last: "Pen lifted above the completed signature.", bridge: "Hard cut on the pen lift to the archival faces in Clip 02.",
+    frames: allClipFrames["01"],
     video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
   },
   {
@@ -41,6 +256,7 @@ const clips: Clip[] = [
     refs: ["REF-02"],
     prompt: "Open in monochrome-sepia on intimate founding-era faces, never a ceremonial wide. Make a gentle push toward a respectful archival portrait of Sheikh Zayed. Then make three clean contemporary human cuts: children passing through a modest UAE school gate at 7am; a quiet cream-and-light-wood hospital corridor; lined older hands around a clear glass cup of tea. Warm 35mm realism. No skyline, flags, legible signs, brands or theatrical emotion.",
     first: "Close archival face frame.", last: "Lined hands around tea in warm morning light.", bridge: "Hard cut to matte-black type in Clip 03; retain the tea warmth as the type accent.",
+    frames: allClipFrames["02"],
     video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
   },
   {
@@ -51,6 +267,7 @@ const clips: Clip[] = [
     refs: [],
     prompt: "Create a calm graphic clip on matte black. Hold black for two seconds, then fade in approved Arabic lettering above a smaller English line, centered in warm off-white. Hold still; gently fade out during the last second. Composite exact supplied vectors in post: Arabic قانون حقوق الطفل, English A law for its children. Do not ask a generation model to produce text.",
     first: "Matte black.", last: "Matte black after the title clears.", bridge: "Clip 04 starts from identical black; type scale, leading and color stay locked.",
+    frames: allClipFrames["03"],
     video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
   },
   {
@@ -60,7 +277,9 @@ const clips: Clip[] = [
     sound: "Strings thin down to one held note by the end.",
     refs: [],
     prompt: "On matte black, present two sequential calm bilingual title cards in the exact system of Clip 03. First card holds four seconds; brief black breath; second holds four seconds; then full black. Composite vectors in post: أصحاب الهمم / People of Determination; كبار المواطنين / Senior Citizens. No movement, flares, texture, logo or sound-design whoosh.",
-    first: "Identical black to Clip 03.", last: "Full black held for two seconds.", bridge: "Carry full black into Clip 05."
+    first: "Identical black to Clip 03.", last: "Full black held for two seconds.", bridge: "Carry full black into Clip 05.",
+    frames: allClipFrames["04"],
+    video: { src: "/generated-video/30-60s/rahma-30-60s-seedance25.mp4", poster: "/generated-video/30-60s/poster.jpg", label: "Seedance 2.5 · Clips 04–06 · 30 sec · 720p · native audio" }
   },
   {
     id: "05", title: "The word", range: "00:40 — 00:50", section: "Word", source: "Use full 10 seconds.",
@@ -69,7 +288,9 @@ const clips: Clip[] = [
     sound: "The held note falls away as the Arabic word appears; maintain two seconds of silence.",
     refs: [],
     prompt: "Minimal graphic clip on pure matte black. Stay black for two seconds. Fade in only the supplied Arabic Rahma wordmark, centered and large in warm off-white; keep it perfectly still for two seconds in silence. Fade in small English Rahma beneath it. No reveal effect, flare, texture or glow. Composite approved vector artwork in post; never generate text.",
-    first: "Full black.", last: "Arabic wordmark with small English name, motionless on black.", bridge: "Match the wordmark silhouette into the app mark in Clip 06."
+    first: "Full black.", last: "Arabic wordmark with small English name, motionless on black.", bridge: "Match the wordmark silhouette into the app mark in Clip 06.",
+    frames: allClipFrames["05"],
+    video: { src: "/generated-video/30-60s/rahma-30-60s-seedance25.mp4", poster: "/generated-video/30-60s/poster.jpg", label: "Seedance 2.5 · Clips 04–06 · 30 sec · 720p · native audio" }
   },
   {
     id: "06", title: "Something you can hold", range: "00:50 — 01:00", section: "Word", source: "Use full 10 seconds.",
@@ -78,7 +299,9 @@ const clips: Clip[] = [
     sound: "Strings return softly. One tactile wake chime; no digital whoosh.",
     refs: ["REF-02", "REF-04"],
     prompt: "Start on the app-mark silhouette from Clip 05; composite a slow three-second vector morph. Match cut to Mariam in the pre-dawn bedroom from REF-02. Her lined hands lift the graphite-black phone from a walnut bedside table. The deep-indigo display calmly resolves to one large amber-gold hold button with a faint teal halo; the button reads bold uppercase RAHMA in deep indigo. Gentle 50mm push, blue dawn through sheer curtains and one warm lamp. Use REF-04 exactly for the phone and UI. No menus, notification barrage or extra people.",
-    first: "Centered app-mark silhouette on black.", last: "Mariam holds the awake phone near camera; button unpressed.", bridge: "Clip 07 begins on the same hands, phone orientation, button placement and dawn color."
+    first: "Centered app-mark silhouette on black.", last: "Mariam holds the awake phone near camera; button unpressed.", bridge: "Clip 07 begins on the same hands, phone orientation, button placement and dawn color.",
+    frames: allClipFrames["06"],
+    video: { src: "/generated-video/30-60s/rahma-30-60s-seedance25.mp4", poster: "/generated-video/30-60s/poster.jpg", label: "Seedance 2.5 · Clips 04–06 · 30 sec · 720p · native audio" }
   },
   {
     id: "07", title: "One button", range: "01:00 — 01:10", section: "Product", source: "Use full 10 seconds.",
@@ -87,7 +310,8 @@ const clips: Clip[] = [
     sound: "Close room tone, with an almost inaudible tactile confirmation at second two.",
     refs: ["REF-01", "REF-02", "REF-04"],
     prompt: "Continue exactly from Clip 06: Mariam, dove-grey headscarf, cream cardigan, gold wedding band, graphite phone and deep-indigo UI. Macro 85mm in the same pre-dawn bedroom. Her thumb deliberately presses the single amber circle marked bold uppercase RAHMA and holds exactly two seconds; the stillness makes the count legible. At the end, one soft teal confirmation pulse appears. Her hand relaxes but stays in frame. She is capable and calm; no typing, menus, alarms, urgency or extra fingers.",
-    first: "Same upright phone in Mariam’s hands; button unpressed.", last: "Confirmation pulse has settled into a quiet amber circle.", bridge: "Match the circular pulse to the map marker glow in Clip 08."
+    first: "Same upright phone in Mariam’s hands; button unpressed.", last: "Confirmation pulse has settled into a quiet amber circle.", bridge: "Match the circular pulse to the map marker glow in Clip 08.",
+    frames: allClipFrames["07"]
   },
   {
     id: "08", title: "The people who love them, first", range: "01:10 — 01:20", section: "Product", source: "Use full 10 seconds.",
@@ -96,7 +320,8 @@ const clips: Clip[] = [
     sound: "Soft map-resolution tone. Natural room tone stops as Sami stands; never an alert siren.",
     refs: ["REF-01", "REF-03", "REF-04"],
     prompt: "Begin with Clip 07’s teal pulse becoming an amber location dot on a non-readable deep-indigo map over Lina’s shoulder. Lina is an Arab woman from the UAE/GCC and sits calmly in the graphite compact car on a quiet UAE street at blue hour. Abstract building and floor shapes only. After five seconds, cut to Sami, an Arab man, in a warm apartment conversation. His graphite phone softly lights on a nearby table; he looks, pauses and stands before anyone else reacts. Keep the camera near him, not on the screen. No driving, running or panic.",
-    first: "Teal pulse becomes an amber map marker.", last: "Sami upright, phone in hand, composed and attentive.", bridge: "Clip 09 opens on Sami’s look and expands the quiet notice chain."
+    first: "Teal pulse becomes an amber map marker.", last: "Sami upright, phone in hand, composed and attentive.", bridge: "Clip 09 opens on Sami’s look and expands the quiet notice chain.",
+    frames: allClipFrames["08"]
   },
   {
     id: "09", title: "Everyone who needs to know", range: "01:20 — 01:30", section: "Product", source: "Use full 10 seconds.",
@@ -105,7 +330,8 @@ const clips: Clip[] = [
     sound: "Music gains gentle momentum; each acknowledgement has a soft related tactile tone. No siren.",
     refs: ["REF-01", "REF-03", "REF-04"],
     prompt: "Open on Sami already moving with quiet purpose. Four humane 1.5-second match-cut vignettes, all Arab people from a contemporary UAE/GCC context: Dr. Noor glances at a non-readable phone and turns into the quiet hospital corridor; the navy-uniform control operator lifts her head at her desk with abstract dark screens; a non-speaking paramedic calmly closes an already-open rear vehicle door with no flashing lights; a mid-40s Arab woman in a warm apartment reads her graphite phone and her face releases into relief. Screens remain secondary; no vehicle movement, branding or spectacle.",
-    first: "Sami turning out of his conversation.", last: "Relieved woman, phone lowered slightly, breathing easy.", bridge: "Cut from her relaxed face to the quiet wearable macro in Clip 10."
+    first: "Sami turning out of his conversation.", last: "Relieved woman, phone lowered slightly, breathing easy.", bridge: "Cut from her relaxed face to the quiet wearable macro in Clip 10.",
+    frames: allClipFrames["09"]
   },
   {
     id: "10", title: "Quietly, in the background", range: "01:30 — 01:36", section: "Product", source: "Generate 10 seconds; use only the first 6 seconds, then cut to black.",
@@ -114,7 +340,8 @@ const clips: Clip[] = [
     sound: "Music thins to a soft single line; natural paper rustle only.",
     refs: ["REF-01", "REF-02", "REF-04"],
     prompt: "Begin on the exact round black wearable from REF-04 resting on Mariam’s thin wrist over white cotton bedding in soft morning light. Its deep-indigo face has a thin amber ring with bold uppercase RAHMA centered in warm off-white; no data dashboard. Over six calm seconds, pull back to Mariam in the cream-and-walnut home, dove-grey headscarf, muted teal blouse and cream cardigan, comfortably reading a folded newspaper. Nothing has happened: that is the point. Hold four extra seconds of the same peace for editorial safety, then discard them. No alerts, illness, drama, nurses, logos or busy UI.",
-    first: "Wearable macro: quiet amber ring on white bedding.", last: "EDITORIAL OUT at 01:36: Mariam reading in peaceful morning light.", bridge: "Hard cut to black. This board intentionally stops before Three Moments."
+    first: "Wearable macro: quiet amber ring on white bedding.", last: "EDITORIAL OUT at 01:36: Mariam reading in peaceful morning light.", bridge: "Hard cut to black. This board intentionally stops before Three Moments.",
+    frames: allClipFrames["10"]
   }
 ];
 
@@ -187,7 +414,7 @@ export default function StoryboardPage() {
       </section>
 
       <section className="timeline section-pad" id="clips">
-        <div className="section-heading"><div><p className="eyebrow">GENERATION TIMELINE</p><h2>Ten clips. One uninterrupted thought.</h2></div><p>Generate each source clip at 10 seconds. Clip 10 has a four-second safety tail but is editorially cut at 01:36.</p></div>
+        <div className="section-heading"><div><p className="eyebrow">1 FPS REVIEW TIMELINE</p><h2>Ten clips. One uninterrupted thought.</h2></div><p>Review every source clip as second-by-second still frames first. Clip 10 stops at the editorial out: 01:36.</p></div>
         <div className="filters" role="group" aria-label="Filter clips">
           {(["All", "Promise", "Word", "Product"] as const).map((item) => <button className={section === item ? "active" : ""} onClick={() => setSection(item)} key={item}>{item}</button>)}
         </div>
@@ -208,6 +435,26 @@ export default function StoryboardPage() {
         <div className="drawer-kicker"><span>CLIP {selected.id}</span><i /> <span>{selected.range}</span></div>
         <h2>{selected.title}</h2>
         <p className="drawer-source">{selected.source}</p>
+        {selected.frames && <div className="frame-board">
+          <div className="frame-board-head">
+            <div><span>SECOND-BY-SECOND FRAMES</span><p>Review these stills before approving any future video connection pass.</p></div>
+            <b>{selected.frames.length} frames</b>
+          </div>
+          <div className="frame-grid">
+            {selected.frames.map((frame) => <article className="frame-card" key={frame.second}>
+              <img src={frame.image} alt={`${selected.title} storyboard frame at ${frame.second}`} />
+              <div className="frame-card-body">
+                <div className="frame-time"><span>{frame.second}</span><strong>{frame.title}</strong></div>
+                <p>{frame.visual}</p>
+                <em>{frame.voiceover}</em>
+                <details>
+                  <summary>Frame prompt</summary>
+                  <p>{frame.prompt}</p>
+                </details>
+              </div>
+            </article>)}
+          </div>
+        </div>}
         {selected.video && <div className="scene-video">
           <div className="scene-video-meta"><span>GENERATED SCENE</span><em>{selected.video.label}</em></div>
           <video controls playsInline preload="metadata" poster={selected.video.poster}>
