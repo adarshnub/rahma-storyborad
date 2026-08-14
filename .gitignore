@@ -1,0 +1,44 @@
+# Dependencies and build output
+node_modules/
+.next/
+.turbo/
+out/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local Python tooling
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Generated media and document-render QA
+generated-video/
+rendered-storyboard/
+
+# Logs, coverage and TypeScript build state
+*.log
+logs/
+coverage/
+*.tsbuildinfo
+
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Deployment and package-manager caches
+.vercel/
+.cache/
+.eslintcache
