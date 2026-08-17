@@ -9,6 +9,7 @@
 - Wearable: black round case and strap; deep-indigo face; thin amber ring with bold uppercase RAHMA in warm off-white.
 - Palette: muted indigo, cream limestone, walnut, restrained teal, amber practicals. No red emergency palette.
 - Rule: no sirens, flashing lights, panic, crowds, rescue spectacle, unreadable AI text, or surveillance framing.
+- Opening unity language: convey the UAE as a federation through an abstract seven-point motif and connected everyday care—not flag-waving, ceremonial crowds, military imagery, or skyline spectacle. The seven-point motif is a compositor-made transition element, never generated as text or a literal map.
 
 ## Reference images
 
@@ -16,6 +17,8 @@
 - `reference-images/REF-02-home-environments.png` - Pre-dawn bedroom and Mariam home
 - `reference-images/REF-03-service-locations.png` - Car, hospital corridor, control room
 - `reference-images/REF-04-device-and-wearable.png` - Phone UI and wearable
+- `reference-images/updated-opening/clip-01-seven-point-unity-transition.png` - Clip 01 compositing reference for the abstract seven-point federation transition
+- `reference-images/updated-opening/clip-02-neighbour-doorway-care.png` - Clip 02 present-day care reference: neighbour holding the door for Mariam
 
 ## Clips
 
@@ -23,39 +26,39 @@
 
 **Editorial use:** Use 00:00-00:10.
 
-**Beat:** 0:00-0:03 absolute black. 0:03-0:10 grainy 1971 signing footage: tight hands, fountain pen, formal document, slight slow motion. End with the pen completing the signature and lifting.
+**Beat:** 0:00-0:03 absolute black. 0:03-0:08 grainy 1971 signing footage: tight hands, fountain pen, formal document, slight slow motion. 0:08-0:10 the pen completes the signature and lifts; in the warm paper grain, seven small amber points appear and connect with hairline strokes before resolving into black. This is an abstract federation cue, not a literal map or emblem.
 
 **VO:** This country did not begin with a border.
 
 **Sound:** 0:00-0:03 true silence. At 0:03 a single low sustained cello or oud note enters; no other effects.
 
-**References:** None (licensed archive only; use the archive fallback note below).
+**References:** `reference-images/updated-opening/clip-01-seven-point-unity-transition.png` for the seven-point compositing placement only. Use licensed archive for the base historical image.
 
 **Prompt:**
 
-Use case: photorealistic-natural. Asset: 16:9, 10-second cinematic video clip for the Rahma launch film. Grade: muted indigo shadows, warm amber practicals, cream limestone, restrained teal; 24 fps, 180-degree shutter, gentle 35mm grain, natural skin texture. Camera language: intimate, human, precise, never a surveillance view. The camera stays with a person or a meaningful object. Motion is slow, stable and deliberate. Every character is Arab, from a contemporary UAE/GCC context. Performance: quiet attention, never fear or spectacle. No sirens, no flashing lights, no ambulance action, no panic, no crowd, no unapproved visible brands, no readable incidental text, no watermark. The Rahma phone is graphite black with a deep-indigo screen and one large round amber-gold hold button marked bold uppercase RAHMA in deep indigo; the round black wearable shows bold uppercase RAHMA in warm off-white inside a thin amber ring. Preserve the supplied reference frames exactly for wardrobe, locations, device finish and palette. Begin on full black for exactly three seconds. Then reveal a historically respectful, grainy 1971 archival-style macro: mature male hands in a dark formal sleeve signing an official founding document with a fountain pen. 50mm close shot, soft monochrome-sepia archive texture, subtle film gate weave, slowed just enough to feel remembered. Do not show a wide ceremony, flags, crowds, logos, or legible document text. End on the pen lifting after the completed signature.
+Use case: photorealistic-natural. Asset: 16:9, 10-second cinematic video clip for the Rahma launch film. Grade: muted indigo shadows, warm amber practicals, cream limestone, restrained teal; 24 fps, 180-degree shutter, gentle 35mm grain, natural skin texture. Camera language: intimate, human, precise, never a surveillance view. The camera stays with a person or a meaningful object. Motion is slow, stable and deliberate. Every character is Arab, from a contemporary UAE/GCC context. Performance: quiet attention, never fear or spectacle. No sirens, no flashing lights, no ambulance action, no panic, no crowd, no unapproved visible brands, no readable incidental text, no watermark. The Rahma phone is graphite black with a deep-indigo screen and one large round amber-gold hold button marked bold uppercase RAHMA in deep indigo; the round black wearable shows bold uppercase RAHMA in warm off-white inside a thin amber ring. Preserve the supplied reference frames exactly for wardrobe, locations, device finish and palette. Begin on full black for exactly three seconds. Then reveal a historically respectful, grainy 1971 archival-style macro: mature male hands in a dark formal sleeve signing an official founding document with a fountain pen. 50mm close shot, soft monochrome-sepia archive texture, subtle film gate weave, slowed just enough to feel remembered. Do not show a wide ceremony, flags, crowds, logos, or legible document text. At eight seconds, the pen completes the signature and lifts. In post, composite seven small amber points, connected by barely-there hairline strokes inside the warm document grain; hold for no more than two seconds before black. It should suggest seven emirates choosing one future, without becoming a map, flag, logo, or readable graphic. Do not ask the video generator to create the seven-point graphic.
 
 **First frame:** Pure black.
 
-**Last frame:** Tight archival frame: pen just lifted from the completed signature.
+**Last frame:** Seven faint amber points, briefly joined over the archival paper grain, dissolving toward black.
 
-**Bridge:** Hard cut on the pen lift to archival faces in Clip 02; retain the same monochrome-sepia grade for the first beat.
+**Bridge:** Dissolve the seven-point unity motif into archival faces in Clip 02; retain the same monochrome-sepia grade for the first beat. The points must be composited in editorial, not generated.
 
 ### Clip 02 | 00:10-00:20
 
 **Editorial use:** Use 00:10-00:20.
 
-**Beat:** 0:10-0:14 archival faces of founding fathers, intimate rather than ceremonial. 0:14-0:18 slow push toward Sheikh Zayed archive portrait. 0:18-0:20 present-day: school gate, hospital corridor, older hands around tea; three brisk 0.7-second human details.
+**Beat:** 0:10-0:14 archival faces of founding fathers, intimate rather than ceremonial; the final traces of the seven points disappear into the film grain. 0:14-0:17 slow push toward Sheikh Zayed archive portrait. 0:17-0:20 present-day: four brief connected details—a child entering a modest UAE school gate, a calm hand on a hospital corridor rail, a younger adult holding a door for an older neighbour, and lined older hands around tea. Each image inherits the same warm amber accent, making care feel shared across generations and places.
 
 **VO:** It began with a promise. That no one here would be left to manage alone. Everything built since has been that promise, keeping its word.
 
 **Sound:** The sustained note opens to restrained warm strings at 0:18. Keep the archive quiet; no crowd ambience.
 
-**References:** REF-02 for tea-hands texture only.
+**References:** REF-02 for tea-hands texture only; `reference-images/updated-opening/clip-02-neighbour-doorway-care.png` for the neighbour-doorway care detail.
 
 **Prompt:**
 
-Use case: photorealistic-natural. Asset: 16:9, 10-second cinematic video clip for the Rahma launch film. Grade: muted indigo shadows, warm amber practicals, cream limestone, restrained teal; 24 fps, 180-degree shutter, gentle 35mm grain, natural skin texture. Camera language: intimate, human, precise, never a surveillance view. The camera stays with a person or a meaningful object. Motion is slow, stable and deliberate. Every character is Arab, from a contemporary UAE/GCC context. Performance: quiet attention, never fear or spectacle. No sirens, no flashing lights, no ambulance action, no panic, no crowd, no unapproved visible brands, no readable incidental text, no watermark. The Rahma phone is graphite black with a deep-indigo screen and one large round amber-gold hold button marked bold uppercase RAHMA in deep indigo; the round black wearable shows bold uppercase RAHMA in warm off-white inside a thin amber ring. Preserve the supplied reference frames exactly for wardrobe, locations, device finish and palette. Open on a monochrome-sepia archival close composition of founding-era faces, not a ceremonial wide. Make a gentle 4-second push toward a respectful archival portrait of Sheikh Zayed. Then make three clean, human present-day cuts: children passing through a modest UAE school gate at 7am; a quiet clean hospital corridor; lined older hands around a clear glass cup of tea. Each contemporary shot is intimate, 35mm, warm and unhurried. No skyline, flags, legible signage, visible brands or theatrical emotion.
+Use case: photorealistic-natural. Asset: 16:9, 10-second cinematic video clip for the Rahma launch film. Grade: muted indigo shadows, warm amber practicals, cream limestone, restrained teal; 24 fps, 180-degree shutter, gentle 35mm grain, natural skin texture. Camera language: intimate, human, precise, never a surveillance view. The camera stays with a person or a meaningful object. Motion is slow, stable and deliberate. Every character is Arab, from a contemporary UAE/GCC context. Performance: quiet attention, never fear or spectacle. No sirens, no flashing lights, no ambulance action, no panic, no crowd, no unapproved visible brands, no readable incidental text, no watermark. The Rahma phone is graphite black with a deep-indigo screen and one large round amber-gold hold button marked bold uppercase RAHMA in deep indigo; the round black wearable shows bold uppercase RAHMA in warm off-white inside a thin amber ring. Preserve the supplied reference frames exactly for wardrobe, locations, device finish and palette. Open on a monochrome-sepia archival close composition of founding-era faces, not a ceremonial wide; the final, almost invisible traces of the compositor-made seven-point motif dissolve into the grain. Make a gentle 3-second push toward a respectful archival portrait of Sheikh Zayed. Then make four clean, connected present-day cuts: a child entering a modest UAE school gate at 7am; one calm hand on a cream-limestone hospital-corridor rail; a younger Arab adult quietly holding a door for an older Arab neighbour; lined older hands around a clear glass cup of tea. Carry one restrained amber practical or warm highlight through every contemporary frame, linking generations and everyday places into one shared promise. Each shot is intimate, 35mm, warm and unhurried. No skyline, flags, legible signage, visible brands or theatrical emotion.
 
 **First frame:** Archive face frame, close and grainy.
 
