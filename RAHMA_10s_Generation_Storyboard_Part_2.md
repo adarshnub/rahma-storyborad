@@ -1,11 +1,11 @@
 # RAHMA - 10-Second Generation Storyboard (Part 2)
 
-**Scope:** 01:36-02:32 only: the three use cases. The close (02:32-02:50) remains outside this document. All source clips are generated as 10 seconds; Clip 12 and Clip 14 are trimmed to 8 seconds in the master edit.
+**Scope:** 01:36-02:50: the three use cases and the close. All source clips are generated as still-frame storyboards; Clip 12, Clip 14 and Clip 16 use editorially trimmed timing in the master edit.
 
 ## Approved reference images
 
 - `reference-images/part-2-three-moments/continuity-boards/moment-01-yousef-mother-emirati-park.png` - Emirati Yousef and mother; Friday-afternoon park, wardrobe and relationship lock.
-- `reference-images/part-2-three-moments/continuity-boards/moment-02-lina-emirati-kitchen.png` - Established Emirati cast member Lina; kitchen, wardrobe and morning-light lock.
+- `reference-images/part-2-three-moments/continuity-boards/moment-02-amina-wheelchair-kitchen.png` - Amina, an authentic Emirati permanent wheelchair user; face, wardrobe, accessible kitchen and doorway lock.
 - `reference-images/part-2-three-moments/continuity-boards/moment-02-emirati-pharmacist-rider.png` - Required Emirati pharmacist and delivery-rider support-cast lock for Moment Two.
 - `reference-images/part-2-three-moments/continuity-boards/moment-03-ahmed-daughter-emirati-night.png` - Emirati Ahmed and daughter; living-room and night-light lock.
 - `reference-images/part-2-three-moments/continuity-boards/part-2-location-board.png` - Park, kitchen/doorway, and living-room/corridor material and palette lock.
@@ -31,19 +31,19 @@ The source draft had a child and two senior characters. To meet the current dire
 | Moment | Lead age group | Lead character | What Rahma proves |
 | --- | --- | --- | --- |
 | One - The Child | Teenager, 13–14 | Emirati teenage boy | A teenager triggers Rahma from a safe building corridor during a fire response; fire-rescue and his parents reach him. |
-| Two - The Medicine | Working-age adult | Lina (established Part 1 cast) | Prevention: a routine medicine refill arrives before a shortage becomes a problem. |
+| Two - The Medicine | Working-age adult | Amina, a permanent wheelchair user | Prevention: a routine medicine refill arrives before a shortage becomes a problem. |
 | Three - The Night | Senior citizen, 81 | Ahmed | A calm, restrained medical response begins before his daughter has to explain anything. |
 
-Mariam remains the senior continuity character introduced in Part 1; she does not become the lead of Moment Two. Lina takes the working-age role in Moment Two, avoiding both age-group duplication and an unnecessary new cast member.
+Amina is the one necessary new continuity cast member: a working-age Emirati woman who is a permanent wheelchair user and cannot walk. Mariam remains the senior continuity character introduced in Part 1, while Ahmed remains the senior lead of Moment Three.
 
 ## Character and location boards required before per-second generation
 
 These boards are generation prerequisites, not optional inspiration. The approved files above are used as references for every later frame.
 
 1. **Teenager, family and fire-rescue continuity board** - Emirati boy, 13–14, muted teal hoodie and dark trousers; Emirati mother and father; and a calm Emirati fire-rescue team. The child is visibly worried but physically safe in a clear building corridor; fire is established separately through the response context, never with graphic danger to the child.
-2. **Lina continuity board** - Use the established Part 1 Lina reference, preserving her Emirati facial identity, beige headscarf, warm cream blouse and navy trousers. In this situation she is a capable working-age adult at home. The tone is ordinary morning competence, not frailty or patienthood.
+2. **Amina continuity board** - Amina is an authentic Emirati woman in her late 40s: taupe hijab, cream cardigan, muted teal blouse and navy trousers. She is a permanent wheelchair user and remains seated in her manual wheelchair in every applicable shot; never depict her standing or walking. Her cream-and-walnut home is visibly accessible, with lowered work surfaces and a clear doorway. The tone is ordinary morning competence, not frailty or patienthood.
 3. **Ahmed and daughter continuity board** - Ahmed: Emirati man, 81, silver hair, warm-brown cardigan over a cream shirt, seated in his own tidy living room. Daughter: Emirati woman, early 40s, contemporary UAE wardrobe in muted indigo and cream. Their relationship is close without melodrama.
-4. **Location board** - Park edge, Lina's kitchen and doorway, Ahmed's living room and building corridor. Every location must use cream limestone, walnut and restrained teal notes consistent with `REF-02` and `REF-03`.
+4. **Location board** - Building corridor, Amina's accessible kitchen and doorway, Ahmed's living room and building corridor. Every location must use cream limestone, walnut and restrained teal notes consistent with `REF-02` and `REF-03`.
 5. **Device plate** - Exact phone and sparse abstract map/hold-state treatment, composited from REF-04 rather than reimagined by image generation.
 
 ## VO and sound lock
@@ -92,20 +92,20 @@ Use the supplied shooting-script voiceover below. The visual pacing must leave r
 
 **Editorial use:** Use 01:54-02:04.
 
-**VO:** “Lina has insulin for nine more days. Nobody has fallen. Nothing has gone wrong. Rahma noticed nine days ago.”
+**VO:** “Amina has insulin for nine more days. Nobody has fallen. Nothing has gone wrong. Rahma noticed nine days ago.”
 
 | Time | One-second frame | Generation / compositing requirement |
 | --- | --- | --- |
 | 01:54 | Matte black title-card hold. | Composite approved bilingual title in post: “An ordinary morning”. |
 | 01:55 | Same title-card hold. | Identical Part 1 black/type treatment. |
-| 01:56 | Lina makes tea in her cream-and-walnut kitchen. | Working-age, capable adult; preserve the established Lina identity. |
-| 01:57 | She waters a plant at the window. | Daylight, ordinary domestic calm. |
-| 01:58 | She sets a simple breakfast place and checks the time naturally. | No medication UI or anxiety. |
-| 01:59 | Lina's graphite Rahma phone softly lights with an automatic refill-reminder placeholder. | Exact reminder message is composited in post; no generated text. |
+| 01:56 | Amina makes tea at the lowered kitchen worktop, seated in her wheelchair. | Preserve Amina's locked Emirati identity, wardrobe and wheelchair. |
+| 01:57 | Still seated, she waters a plant at the accessible low window. | Daylight, ordinary domestic calm; never standing. |
+| 01:58 | She sets a simple breakfast place from her chair. | No medication UI or anxiety. |
+| 01:59 | Amina's graphite Rahma phone softly lights with an automatic refill reminder. | Composite exact message: “Insulin refill needed by 28 August. Delivery can be arranged.” |
 | 02:00 | Pharmacist's hands prepare an unbranded paper bag. | Warm, ordinary pharmacy counter; no medical drama. |
 | 02:01 | Delivery rider sets the small bag safely into an insulated tote. | Static preparation, not fast delivery riding. |
-| 02:02 | The paper bag rests outside Lina's doorway in soft corridor light. | No visible address or brand. |
-| 02:03 | Lina opens the door and receives the bag. | A small, ordinary handover. |
+| 02:02 | The paper bag rests by Amina's accessible doorway in soft corridor light. | Her wheelchair is visible beyond it; no visible address or brand. |
+| 02:03 | Amina receives the bag while seated in her wheelchair. | A small, ordinary handover at her seated height. |
 
 ### Clip 14 | 02:04-02:14 | Moment Two - The Medicine, proof of prevention
 
@@ -115,13 +115,13 @@ Use the supplied shooting-script voiceover below. The visual pacing must leave r
 
 | Time | One-second frame | Generation / compositing requirement |
 | --- | --- | --- |
-| 02:04 | Lina closes the door, bag in hand. | No visible medical branding. |
-| 02:05 | She puts the bag away on a walnut kitchen shelf. | Calm, capable action. |
-| 02:06 | She sits with tea and a folded newspaper. | Mirror Mariam's Part 1 peace without repeating Mariam. |
-| 02:07 | Close tea-glass detail in her hands. | Warm amber liquid, walnut surface. |
-| 02:08 | Lina reads, relaxed. | No phone or device demand. |
+| 02:04 | The bag rests beside Amina's chair after the handover. | No visible medical branding; she remains seated. |
+| 02:05 | She puts the bag away on a lowered walnut kitchen shelf from her chair. | Calm, capable action. |
+| 02:06 | She drinks tea and reads a folded newspaper in her wheelchair. | Peace without erasing her mobility context. |
+| 02:07 | Close tea-glass and newspaper detail in her hands. | Warm amber liquid, wheelchair detail remains in frame. |
+| 02:08 | Amina reads, relaxed, seated in her wheelchair. | No phone or device demand. |
 | 02:09 | The quiet kitchen window and plant. | Hold the absence of drama. |
-| 02:10 | Lina's profile in soft morning light. | One second of stillness. |
+| 02:10 | Amina's seated profile in soft morning light. | Wheelchair armrest or wheel stays visible. |
 | 02:11 | The tea glass remains on the table; nothing interrupts. | Hold almost longer than expected. |
 
 ### Clip 15 | 02:12-02:22 | Moment Three - The Night, recognition
@@ -143,9 +143,9 @@ Use the supplied shooting-script voiceover below. The visual pacing must leave r
 | 02:20 | Thumb holding: count two; one soft teal confirmation pulse. | Composite pulse in post; no extra UI. |
 | 02:21 | Ahmed rests back, conscious and composed. | The system is responding before he has to explain. |
 
-### Clip 16 | 02:22-02:32 | Moment Three - The Night, connection
+### Clip 16 | 02:22-02:30 | Moment Three - The Night, connection
 
-**Editorial use:** Use 02:22-02:32.
+**Editorial use:** Use 02:22-02:30.
 
 **VO:** “His daughter knows before anyone else does. The ambulance is already moving. The hospital already knows his history. Nobody has to explain anything to anyone. He was never on his own. Not for one minute.”
 
@@ -159,8 +159,35 @@ Use the supplied shooting-script voiceover below. The visual pacing must leave r
 | 02:27 | Inside her parked or slowly moving car, her focused face is lit by the windscreen. | No speed, no traffic montage, no route text. |
 | 02:28 | Ahmed's building corridor; she approaches his door. | Cream limestone and walnut, consistent with service locations. |
 | 02:29 | She enters; two calm paramedics are already with Ahmed. | No branded ambulance, no lights, no procedure spectacle. |
-| 02:30 | Ahmed looks up and sees his daughter. | Intimate, quiet relief. |
-| 02:31 | His hand reaches; she takes it. | End on the two hands. |
+
+### Clip 17 | 02:30-02:50 | FIVE — CLOSE
+
+**VO:** “This country was built on a promise — that no one here would be left to manage alone. In this country, someone is always thinking about the people who cannot always ask. There is a word for that.”
+
+**Sound:** Slow, quiet montage. Each human image holds for two seconds. Music thins to a single line, then silence. No effects.
+
+| Time | One-second frame | Generation / compositing requirement |
+| --- | --- | --- |
+| 02:30 | The teenager is safe with both parents. | Continuity-correct replacement for the earlier kerb image: this is the same Emirati family from the fire-response story, now together and calm. |
+| 02:31 | Hold on the family. | No responders, no fire or crowd; only their quiet relief. |
+| 02:32 | Amina reads her newspaper in her wheelchair. | Same locked wardrobe, home and mobility context. |
+| 02:33 | Hold on Amina. | The frame is calm, capable and unhurried. |
+| 02:34 | Ahmed's hand rests in his daughter's. | Existing Ahmed/daughter continuity lock. |
+| 02:35 | Hold on their hands. | Let the image sit. |
+| 02:36 | Amina's face. | A quiet, direct human portrait. |
+| 02:37 | Ahmed's face. | A quiet, direct human portrait. |
+| 02:38 | Cut to black. | Silence begins; no image or logo. |
+| 02:39 | Black hold. | “In this country, someone is always thinking…” |
+| 02:40 | Black hold. | “…about the people who cannot always ask.” |
+| 02:41 | Black hold. | “There is a word for that.” |
+| 02:42 | Arabic script appears alone, centred: `رحمة`. | Exact compositor-supplied typography; hold for a full two seconds. |
+| 02:43 | Arabic script hold. | No animation or additional mark. |
+| 02:44 | Arabic script hold. | Final silent beat. |
+| 02:45 | Small “Rahma” and logo beneath the Arabic script. | Exact compositor-supplied title card. |
+| 02:46 | Logo hold. | No reveal effect. |
+| 02:47 | Cut to black. | Silence. |
+| 02:48 | Black hold. | Silence. |
+| 02:49 | Final black. | End at 02:50. |
 
 ## Generation acceptance checklist
 
