@@ -4,7 +4,7 @@
 
 ## Locked continuity
 
-- Cast: every character is Arab, from a contemporary UAE/GCC context.
+- Cast: every character is Emirati, from a contemporary UAE context. Maintain the established cast faces, wardrobe and visual treatment; introduce a new Emirati character only when a new situation genuinely requires one.
 - Phone: graphite black; deep-indigo UI; one amber-gold round hold button marked bold uppercase RAHMA; subtle teal confirmation pulse.
 - Wearable: black round case and strap; deep-indigo face; thin amber ring with bold uppercase RAHMA in warm off-white.
 - Palette: muted indigo, cream limestone, walnut, restrained teal, amber practicals. No red emergency palette.

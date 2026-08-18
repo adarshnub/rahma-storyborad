@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#bda98f"/><stop offset="1" stop-color="#6d513d"/></linearGradient>
+    <linearGradient id="screen" y2="1"><stop stop-color="#152845"/><stop offset="1" stop-color="#0b1629"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" width="1600" height="900" fill="#0a1624" opacity=".24"/>
+  <rect x="555" y="78" width="490" height="744" rx="54" fill="#13171d"/>
+  <rect x="574" y="99" width="452" height="702" rx="40" fill="url(#screen)"/>
+  <circle cx="800" cy="162" r="7" fill="#324257"/>
+  <text x="800" y="235" text-anchor="middle" fill="#d9a34b" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="8">RAHMA</text>
+  <rect x="620" y="282" width="360" height="250" rx="22" fill="#1e3658" stroke="#d9a34b" stroke-width="2"/>
+  <circle cx="665" cy="338" r="18" fill="#d9a34b"/>
+  <text x="700" y="347" fill="#f7f3eb" font-family="Arial, sans-serif" font-size="30" font-weight="700">Refill reminder</text>
+  <text x="665" y="408" fill="#f7f3eb" font-family="Arial, sans-serif" font-size="28">Insulin refill needed by</text>
+  <text x="665" y="450" fill="#d9a34b" font-family="Arial, sans-serif" font-size="34" font-weight="700">28 August</text>
+  <text x="665" y="493" fill="#c7d8d7" font-family="Arial, sans-serif" font-size="24">Delivery can be arranged</text>
+  <text x="800" y="700" text-anchor="middle" fill="#98c7c5" font-family="Arial, sans-serif" font-size="24">Quietly, before you run out.</text>
+</svg>

@@ -6,7 +6,7 @@ type Clip = {
   id: string;
   title: string;
   range: string;
-  section: "Promise" | "Word" | "Product";
+  section: "Promise" | "Word" | "Product" | "Moments";
   source: string;
   beat: string;
   voiceover: string;
@@ -128,6 +128,17 @@ function buildFrames(clipId: string, ext: "jpg" | "png", specs: FrameSpec[]): St
   }));
 }
 
+function buildPartTwoFrames(folder: string, items: Array<[string, string, string]>): StoryFrame[] {
+  return items.map(([second, file, title]) => ({
+    second,
+    image: `/reference-images/part-2-three-moments/per-second/${folder}/${file}`,
+    title,
+    visual: "Approved per-second storyboard still. Preserve the locked Emirati cast, location, tone and 16:9 framing.",
+    voiceover: "See the locked Part 2 voiceover and timing.",
+    prompt: "Use the approved Part 2 continuity boards; no video is authorised from this still alone."
+  }));
+}
+
 const allClipFrames: Record<string, StoryFrame[]> = {
   "01": clip01Frames,
   "02": buildFrames("02", "jpg", [
@@ -236,6 +247,15 @@ const allClipFrames: Record<string, StoryFrame[]> = {
   ])
 };
 
+const partTwoFrames: Record<string, StoryFrame[]> = {
+  "11": buildPartTwoFrames("moment-01-child", [["01:36", "01-36-title-card-black.png", "A building warning"], ["01:37", "01-37-title-card-black.png", "Title hold"], ["01:38", "01-38-yousef-park-edge.png", "Teenager alone"], ["01:39", "01-39-yousef-bottle-cap-macro.png", "He is worried"], ["01:40", "01-40-yousef-side-profile.png", "He takes the phone"], ["01:41", "01-41-mother-bench.png", "Rahma hold"], ["01:42", "01-42-mother-looks-up.png", "Confirmation"], ["01:43", "01-43-mother-scanning.png", "Fire-rescue arrives"], ["01:44", "01-44-mother-phone-placeholder.png", "Safe outside"], ["01:45", "01-45-abstract-map-placeholder.png", "Parents arrive"]]),
+  "12": buildPartTwoFrames("moment-01-child", [["01:46", "01-46-mother-rises.png", "She begins to walk"], ["01:47", "01-47-mother-walks.png", "Following calmly"], ["01:48", "01-48-mother-rounds-hedge.png", "Around the hedge"], ["01:49", "01-49-yousef-revealed-safe.png", "Yousef is safe"], ["01:50", "01-50-yousef-safe-cap.png", "Cap turning"], ["01:51", "01-51-mother-sits-beside.png", "Space and patience"], ["01:52", "01-52-open-palm.png", "Open palm"], ["01:53", "01-53-cap-handover.png", "Shared gesture"]]),
+  "13": buildPartTwoFrames("moment-02-lina-medicine", [["01:54", "01-54-title-card-black.png", "An ordinary morning"], ["01:55", "01-55-title-card-black.png", "Title hold"], ["01:56", "02-56-lina-makes-tea.png", "Lina makes tea"], ["01:57", "02-57-lina-waters-plant.png", "Watering the plant"], ["01:58", "02-58-lina-breakfast.png", "Breakfast"], ["01:59", "02-59-refill-reminder-composited.svg", "Rahma refill reminder"], ["02:00", "02-00-pharmacist-prepares-bag.png", "Pharmacist prepares"], ["02:01", "02-01-rider-packs-tote.png", "Rider packs"], ["02:02", "02-02-bag-at-door.png", "Bag at the door"], ["02:03", "02-03-lina-receives-bag.png", "Lina receives it"]]),
+  "14": buildPartTwoFrames("moment-02-lina-medicine", [["02:04", "02-04-lina-closes-door.png", "Door closes"], ["02:05", "02-05-lina-shelves-bag.png", "Bag stored"], ["02:06", "02-06-lina-tea-newspaper.png", "Tea and newspaper"], ["02:07", "02-07-tea-glass-detail.png", "Tea-glass detail"], ["02:08", "02-08-lina-reads.png", "Reading"], ["02:09", "02-09-kitchen-window-plant.png", "Kitchen stillness"], ["02:10", "02-10-lina-profile.png", "Morning profile"], ["02:11", "02-11-tea-stillness.png", "Nothing interrupts"]]),
+  "15": buildPartTwoFrames("moment-03-ahmed-night", [["02:12", "02-12-title-card-black.png", "A Tuesday night"], ["02:13", "02-13-ahmed-asleep.png", "Ahmed asleep"], ["02:14", "02-14-ahmed-home-detail.png", "His own home"], ["02:15", "02-15-ahmed-wakes.png", "Subtle change"], ["02:16", "02-16-ahmed-looks-phone.png", "Looks to the phone"], ["02:17", "02-17-ahmed-reaches-phone.png", "Careful reach"], ["02:18", "02-18-thumb-hold.png", "Thumb settles"], ["02:19", "02-19-thumb-hold-one.png", "Hold: one"], ["02:20", "02-20-thumb-hold-two.png", "Hold: two"], ["02:21", "02-21-ahmed-composed.png", "Composed response"]]),
+  "16": buildPartTwoFrames("moment-03-ahmed-night", [["02:22", "02-22-daughter-table.png", "Daughter at dinner table"], ["02:23", "02-23-daughter-phone.png", "Soft notice"], ["02:24", "02-24-daughter-understands.png", "She understands"], ["02:25", "02-25-daughter-keys.png", "Keys"], ["02:26", "02-26-daughter-leaves.png", "Leaving calmly"], ["02:27", "02-27-daughter-car.png", "Focused journey"], ["02:28", "02-28-building-corridor.png", "Building corridor"], ["02:29", "02-29-paramedics-with-ahmed.png", "Care already there"], ["02:30", "02-30-ahmed-sees-daughter.png", "Ahmed sees her"], ["02:31", "02-31-hands-together.png", "Hands together"]])
+};
+
 const clips: Clip[] = [
   {
     id: "01", title: "The signature", range: "00:00 — 00:10", section: "Promise", source: "Use full 10 seconds.",
@@ -342,7 +362,13 @@ const clips: Clip[] = [
     prompt: "Begin on the exact round black wearable from REF-04 resting on Mariam’s thin wrist over white cotton bedding in soft morning light. Its deep-indigo face has a thin amber ring with bold uppercase RAHMA centered in warm off-white; no data dashboard. Over six calm seconds, pull back to Mariam in the cream-and-walnut home, dove-grey headscarf, muted teal blouse and cream cardigan, comfortably reading a folded newspaper. Nothing has happened: that is the point. Hold four extra seconds of the same peace for editorial safety, then discard them. No alerts, illness, drama, nurses, logos or busy UI.",
     first: "Wearable macro: quiet amber ring on white bedding.", last: "EDITORIAL OUT at 01:36: Mariam reading in peaceful morning light.", bridge: "Hard cut to black. This board intentionally stops before Three Moments.",
     frames: allClipFrames["10"]
-  }
+  },
+  { id: "11", title: "The child — Rahma response", range: "01:36 — 01:46", section: "Moments", source: "Use 01:36–01:46.", beat: "A worried Emirati teenager triggers Rahma from a safe corridor during a building fire response.", voiceover: "A building emergency. One boy, safe enough to ask for help.", sound: "Building alert ambience and a restrained confirmation tone. No siren foreground.", refs: ["PART 2 / TEEN + FAMILY + FIRE-RESCUE"], prompt: "Use the approved Emirati teenager, family and fire-rescue continuity board. Keep the teenager physically safe.", first: "Black title card.", last: "Parents arrive outside.", bridge: "Continue with the safe handover.", frames: partTwoFrames["11"] },
+  { id: "12", title: "The child — family handover", range: "01:46 — 01:54", section: "Moments", source: "Editorially trimmed to 8 seconds.", beat: "The parents, fire-rescue team and teenager complete a calm, safe handover outside the building.", voiceover: "Help is already on its way. His family reaches him safe.", sound: "Quiet response ambience and family relief; no siren foreground.", refs: ["PART 2 / TEEN + FAMILY + FIRE-RESCUE"], prompt: "Keep the family and rescue response composed; no injury, crowd or spectacle.", first: "Parents check in.", last: "Relieved family connection.", bridge: "Cut to black for Lina's morning.", frames: partTwoFrames["12"] },
+  { id: "13", title: "The medicine — setup", range: "01:54 — 02:04", section: "Moments", source: "Use full 10 seconds.", beat: "Lina's routine refill arrives before it becomes a problem.", voiceover: "Lina has insulin for nine more days. Nobody has fallen. Nothing has gone wrong. Rahma noticed nine days ago.", sound: "Tea, plant water and a soft doorbell.", refs: ["PART 2 / LINA", "EMIRATI SUPPORT CAST"], prompt: "Routine prevention only; no patienthood or medical drama.", first: "Black title card.", last: "Lina receives the bag.", bridge: "Continue into the proof of stillness.", frames: partTwoFrames["13"] },
+  { id: "14", title: "The medicine — proof", range: "02:04 — 02:12", section: "Moments", source: "Editorially trimmed to 8 seconds.", beat: "Nothing happens today. That is the proof.", voiceover: "Nothing happens today. That is the point.", sound: "Tea, paper and morning room tone.", refs: ["PART 2 / LINA"], prompt: "Hold domestic calm; no interruption.", first: "Door closes.", last: "Tea stays still.", bridge: "Cut to black for Ahmed's night.", frames: partTwoFrames["14"] },
+  { id: "15", title: "The night — recognition", range: "02:12 — 02:22", section: "Moments", source: "Use full 10 seconds.", beat: "Ahmed notices a subtle wrongness and calmly uses Rahma.", voiceover: "Ahmed is eighty-one. He lives alone, and he prefers it that way.", sound: "One lamp, television murmur and a restrained confirmation tone.", refs: ["PART 2 / AHMED"], prompt: "No fall, gasp or medical spectacle. The hold is quiet.", first: "Black title card.", last: "Ahmed rests composed.", bridge: "Cut to the daughter before anyone needs to explain.", frames: partTwoFrames["15"] },
+  { id: "16", title: "The night — connection", range: "02:22 — 02:32", section: "Moments", source: "Use full 10 seconds.", beat: "Ahmed's daughter knows, arrives, and takes his hand while calm care is already present.", voiceover: "He was never on his own. Not for one minute.", sound: "Keys, room tone and quiet relief. No siren.", refs: ["PART 2 / AHMED + DAUGHTER", "EMIRATI PARAMEDICS"], prompt: "Connection, not a rescue spectacle; end on the two hands.", first: "Daughter at home.", last: "Hands together.", bridge: "The film close begins at 02:32.", frames: partTwoFrames["16"] }
 ];
 
 const references = [
@@ -416,7 +442,7 @@ export default function StoryboardPage() {
       <section className="timeline section-pad" id="clips">
         <div className="section-heading"><div><p className="eyebrow">1 FPS REVIEW TIMELINE</p><h2>Ten clips. One uninterrupted thought.</h2></div><p>Review every source clip as second-by-second still frames first. Clip 10 stops at the editorial out: 01:36.</p></div>
         <div className="filters" role="group" aria-label="Filter clips">
-          {(["All", "Promise", "Word", "Product"] as const).map((item) => <button className={section === item ? "active" : ""} onClick={() => setSection(item)} key={item}>{item}</button>)}
+          {(["All", "Promise", "Word", "Product", "Moments"] as const).map((item) => <button className={section === item ? "active" : ""} onClick={() => setSection(item)} key={item}>{item}</button>)}
         </div>
         <div className="clip-list">
           {visibleClips.map((clip) => <button className={`clip-row ${selected?.id === clip.id ? "selected" : ""}`} onClick={() => setSelected(clip)} key={clip.id}>
