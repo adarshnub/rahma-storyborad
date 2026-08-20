@@ -42,7 +42,7 @@ These boards are generation prerequisites, not optional inspiration. The approve
 
 1. **Teenager, family and fire-rescue continuity board** - Emirati boy, 13–14, muted teal hoodie and dark trousers; Emirati mother and father; and a calm Emirati fire-rescue team. The child is visibly worried but physically safe in a clear building corridor; fire is established separately through the response context, never with graphic danger to the child.
 2. **Amina continuity board** - Amina is an authentic Emirati woman in her late 40s: taupe hijab, cream cardigan, muted teal blouse and navy trousers. She is a permanent wheelchair user and remains seated in her manual wheelchair in every applicable shot; never depict her standing or walking. Her cream-and-walnut home is visibly accessible, with lowered work surfaces and a clear doorway. The tone is ordinary morning competence, not frailty or patienthood.
-3. **Ahmed and daughter continuity board** - Ahmed: Emirati man, 81, silver hair, warm-brown cardigan over a cream shirt, seated in his own tidy living room. Daughter: Emirati woman, early 40s, contemporary UAE wardrobe in muted indigo and cream. Their relationship is close without melodrama.
+3. **Ahmed, daughter and wearable continuity board** - Ahmed: Emirati man, 81, silver hair, warm-brown cardigan over a cream shirt, seated in his own tidy living room and wearing the exact locked round black Rahma watch. Daughter: Emirati woman, early 40s, contemporary UAE wardrobe in muted indigo and cream. Their relationship is close without melodrama. In the cardiac-distress sequence Ahmed never needs to take, hold or operate a mobile phone: the watch detects first and the nearby phone mirrors Rahma automatically.
 4. **Location board** - Building corridor, Amina's accessible kitchen and doorway, Ahmed's living room and building corridor. Every location must use cream limestone, walnut and restrained teal notes consistent with `REF-02` and `REF-03`.
 5. **Device plate** - Exact phone and sparse abstract map/hold-state treatment, composited from REF-04 rather than reimagined by image generation.
 
@@ -135,13 +135,13 @@ Use the supplied shooting-script voiceover below. The visual pacing must leave r
 | 02:12 | Matte black title-card frame. | Composite approved bilingual title in post: “A Tuesday night”. |
 | 02:13 | Ahmed asleep in his chair; one lamp, television murmuring. | Tidy, lived-in home; he is autonomous, not isolated as spectacle. |
 | 02:14 | Wider room detail: familiar books, folded blanket, side table. | Establish this as clearly his own space. |
-| 02:15 | Ahmed wakes; his brow tightens and one hand rests lightly at his chest. | We see the wrongness in his face and careful breathing—no collapse, gasp or dramatic pain performance. |
-| 02:16 | He keeps breathing carefully and looks to the phone. | The wrongness is restrained but unmistakable. |
-| 02:17 | His hand reaches carefully toward the graphite phone. | Phone on walnut side table; same device plate. |
-| 02:18 | Macro: his thumb settles on the amber hold circle. | Exact device plate; no generated text. |
-| 02:19 | Thumb holding: count one. | Stillness does the counting. |
-| 02:20 | Thumb holding: count two; one soft teal confirmation pulse. | Composite pulse in post; no extra UI. |
-| 02:21 | Ahmed rests back, conscious and composed. | The system is responding before he has to explain. |
+| 02:15 | Ahmed experiences visibly acute cardiac distress while seated: shallow breaths, brow tight, sweat and one hand at his chest. | He remains conscious and upright; make the medical urgency clear without a fall, gasp, collapse or spectacle. |
+| 02:16 | His Rahma watch wakes automatically as the distress is detected. | Ahmed does not touch the wearable or reach for a phone. The exact round black watch has its deep-indigo face, amber ring, RAHMA mark and a quiet teal detection pulse. |
+| 02:17 | Macro: the watch automatically activates Rahma on Ahmed's wrist. | No finger press, dashboard or incident text; only the locked watch treatment and restrained pulse. |
+| 02:18 | Untouched graphite phone on the walnut side table wakes automatically. | The Rahma app mirrors the watch state: deep-indigo screen, one amber-gold Rahma circle and soft teal confirmation halo. Ahmed's hands stay away from it. |
+| 02:19 | The automatic phone-to-care connection holds. | Keep the phone untouched and secondary; the watch remains active on Ahmed's wrist. |
+| 02:20 | Ahmed stays seated and conscious as Rahma continues in the background. | Show the active watch and nearby unattended phone together; no action is required from him. |
+| 02:21 | Ahmed rests back, conscious and supported before anyone arrives. | The system is responding because the watch detected distress, before he has to explain. |
 
 ### Clip 16 | 02:22-02:30 | Moment Three - The Night, connection
 
@@ -151,8 +151,8 @@ Use the supplied shooting-script voiceover below. The visual pacing must leave r
 
 | Time | One-second frame | Generation / compositing requirement |
 | --- | --- | --- |
-| 02:22 | Ahmed's daughter is mid-sentence while setting a kitchen table. | Warm family context; do not crowd the frame. |
-| 02:23 | Her phone lights softly on the counter; she notices. | Phone screen secondary and non-readable. |
+| 02:22 | Ahmed's daughter sets the table as her untouched phone automatically wakes to Rahma. | Warm family context; the automatic activation on the counter must be unmistakable. |
+| 02:23 | She sees the Rahma phone state and understands. | Phone is still untouched; concern, not panic. Exact device treatment only, no generated incident wording. |
 | 02:24 | Close on her face: she stops and understands. | Concern, not panic. |
 | 02:25 | Her hand takes keys from a hook. | Quiet, precise action. |
 | 02:26 | She passes through the apartment door. | Door opens and closes gently; no rushing. |
