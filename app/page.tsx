@@ -17,7 +17,13 @@ type Clip = {
   last: string;
   bridge: string;
   frames?: StoryFrame[];
-  video?: { src: string; poster: string; label: string };
+  video?: {
+    src: string;
+    poster: string;
+    label: string;
+    approval?: "legacy-preview" | "awaiting-review" | "approved";
+    cost?: { budgetUsd: number; spentUsd: number | null; status: string };
+  };
 };
 
 type StoryFrame = {
@@ -264,10 +270,10 @@ const clips: Clip[] = [
     voiceover: "This country did not begin with a border.",
     sound: "True silence for three seconds. Then one sustained, low cello or oud note. No other effects.",
     refs: [],
-    prompt: "Begin on full black for exactly three seconds. Reveal a historically respectful, monochrome-sepia macro of mature hands in a formal dark sleeve signing an official founding document with a fountain pen. Soft archive grain, slight film weave, modest slow motion. No wide ceremony, flags, crowds, logos or readable document text. End on the pen lifting after the signature.",
+    prompt: "Use every approved per-second still for Clip 01 as chronological reference input: 00:00 is the hard first frame, 00:09 is the hard last frame, and every intermediate second preserves the same hand, pen, paper, crop and archival look. Hold full black for exactly three seconds, then reveal the historically respectful monochrome-sepia signing macro. No wide ceremony, flags, crowds, logos or readable document text.",
     first: "Pure black.", last: "Pen lifted above the completed signature.", bridge: "Hard cut on the pen lift to the archival faces in Clip 02.",
     frames: allClipFrames["01"],
-    video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
+    video: { src: "/generated-video/first30-curated-audio/rahma-first30-curated-audio.mp4", poster: "/generated-video/first30-curated-audio/poster.png", label: "Seedance 2.5 · Combined Clips 01–03 · 30 sec · 720p · native audio", approval: "awaiting-review", cost: { budgetUsd: 9.07, spentUsd: 9.07, status: "Completed with 8 curated scenario references—not a 1-FPS conditioning pack. Provider task response reports usage but no separate billed-amount field; displayed spend is the documented 30-second 720p estimate." } }
   },
   {
     id: "02", title: "A promise, kept", range: "00:10 — 00:20", section: "Promise", source: "Use full 10 seconds.",
@@ -278,7 +284,7 @@ const clips: Clip[] = [
     prompt: "Open in monochrome-sepia on intimate founding-era faces, never a ceremonial wide. Make a gentle push toward a respectful archival portrait of Sheikh Zayed. Then make three clean contemporary human cuts: children passing through a modest UAE school gate at 7am; a quiet cream-and-light-wood hospital corridor; lined older hands around a clear glass cup of tea. Warm 35mm realism. No skyline, flags, legible signs, brands or theatrical emotion.",
     first: "Close archival face frame.", last: "Lined hands around tea in warm morning light.", bridge: "Hard cut to matte-black type in Clip 03; retain the tea warmth as the type accent.",
     frames: allClipFrames["02"],
-    video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
+    video: { src: "/generated-video/first30-curated-audio/rahma-first30-curated-audio.mp4", poster: "/generated-video/first30-curated-audio/poster.png", label: "Seedance 2.5 · Combined Clips 01–03 · 30 sec · 720p · native audio", approval: "awaiting-review", cost: { budgetUsd: 9.07, spentUsd: 9.07, status: "Completed with 8 curated scenario references—not a 1-FPS conditioning pack. Provider task response reports usage but no separate billed-amount field; displayed spend is the documented 30-second 720p estimate." } }
   },
   {
     id: "03", title: "A law for its children", range: "00:20 — 00:30", section: "Promise", source: "Use full 10 seconds.",
@@ -289,7 +295,7 @@ const clips: Clip[] = [
     prompt: "Create a calm graphic clip on matte black. Hold black for two seconds, then fade in approved Arabic lettering above a smaller English line, centered in warm off-white. Hold still; gently fade out during the last second. Composite exact supplied vectors in post: Arabic قانون حقوق الطفل, English A law for its children. Do not ask a generation model to produce text.",
     first: "Matte black.", last: "Matte black after the title clears.", bridge: "Clip 04 starts from identical black; type scale, leading and color stay locked.",
     frames: allClipFrames["03"],
-    video: { src: "/generated-video/first-30s/rahma-first-30s-seedance25.mp4", poster: "/generated-video/first-30s/poster.jpg", label: "Seedance 2.5 · Clips 01–03 · 30 sec · 720p · native audio" }
+    video: { src: "/generated-video/first30-curated-audio/rahma-first30-curated-audio.mp4", poster: "/generated-video/first30-curated-audio/poster.png", label: "Seedance 2.5 · Combined Clips 01–03 · 30 sec · 720p · native audio", approval: "awaiting-review", cost: { budgetUsd: 9.07, spentUsd: 9.07, status: "Completed with 8 curated scenario references—not a 1-FPS conditioning pack. Provider task response reports usage but no separate billed-amount field; displayed spend is the documented 30-second 720p estimate." } }
   },
   {
     id: "04", title: "How a nation names care", range: "00:30 — 00:40", section: "Promise", source: "Use full 10 seconds.",
@@ -484,11 +490,17 @@ export default function StoryboardPage() {
           </div>
         </div>}
         {selected.video && <div className="scene-video">
-          <div className="scene-video-meta"><span>GENERATED SCENE</span><em>{selected.video.label}</em></div>
+          <div className="scene-video-meta"><span>{selected.video.approval === "legacy-preview" ? "LEGACY PREVIEW — NOT FOR APPROVAL" : "GENERATED SCENE"}</span><em>{selected.video.label}</em></div>
           <video controls playsInline preload="metadata" poster={selected.video.poster}>
             <source src={selected.video.src} type="video/mp4" />
             Your browser does not support HTML video.
           </video>
+          {selected.video.cost && <div className="generation-cost">
+            <span>VIDEO-GENERATION SPEND</span>
+            <div><b>Budget</b><strong>${selected.video.cost.budgetUsd.toFixed(2)} USD</strong></div>
+            <div><b>Estimated spend</b><strong>{selected.video.cost.spentUsd === null ? "Pending provider billing" : `$${selected.video.cost.spentUsd.toFixed(2)} USD`}</strong></div>
+            <p>{selected.video.cost.status}</p>
+          </div>}
           <a className="scene-download" href={selected.video.src} download>Download this scene <Icon name="arrow" /></a>
         </div>}
         <div className="drawer-block"><span>EDITORIAL BEAT</span><p>{selected.beat}</p></div>
