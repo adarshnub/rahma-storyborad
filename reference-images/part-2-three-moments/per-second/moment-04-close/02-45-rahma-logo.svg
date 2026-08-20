@@ -2,5 +2,4 @@
   <rect width="1600" height="900" fill="#08090c"/>
   <text x="800" y="450" fill="#f4efe5" font-family="Arial, sans-serif" font-size="156" font-weight="500" text-anchor="middle" direction="rtl" unicode-bidi="bidi-override">رحمة</text>
   <text x="800" y="540" fill="#d7a44c" font-family="Arial, sans-serif" font-size="39" letter-spacing="10" text-anchor="middle">RAHMA</text>
-  <circle cx="928" cy="526" r="10" fill="none" stroke="#d7a44c" stroke-width="4"/>
 </svg>
